@@ -5,12 +5,18 @@
   "description": " ",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "cross-env NODE_ENV=development node src/index.js",
+    "deploy": "cross-env NODE_ENV=production node src/index.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.1.4",
     "eslint": "^4.18.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0",
@@ -20,9 +26,14 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-standard": "^3.0.1",
-    "prettier": "^1.9.2"
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.9.2",
+    "webpack": "^4.6.0",
+    "webpack-dev-middleware": "^3.1.2"
   },
   "dependencies": {
-    "koa": "^2.4.1"
+    "koa": "^2.4.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }
