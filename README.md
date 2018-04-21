@@ -1,4 +1,3 @@
-# 简单的eslint + prettier + ts配置模板
+## Koa + webpack项目demo
 
-* prettier配置: https://prettier.io/docs/en/options.html
-* eslint配置: https://eslint.org/docs/user-guide/configuring
+* 让webpack-dev-middleware适应koa
