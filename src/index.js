@@ -4,9 +4,10 @@ const routes = require('./routes')
 
 const app = new Koa()
 
-// 添加中间件
-middlewares(app)
 // 路由
 routes(app)
+
+// 添加中间件
+middlewares(app)
 
 app.listen(3000)

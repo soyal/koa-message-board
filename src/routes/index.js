@@ -9,6 +9,9 @@ module.exports = function routes(app) {
 
   router.get(/^\//, (ctx, next) => {
     console.log('handle /, matchedRouteName: ', ctx.path)
+    console.log(ctx.req.url)
+    // todo convert ctx.req.url to / if request html and not end with dot(.)
+    next()
   })
 
   app.use(router.routes())
