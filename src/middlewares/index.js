@@ -1,8 +1,7 @@
-const webpackMd = require('./webpack')
-const compose = require('koa-compose')
+const webpackM = require('./webpack')
 
 const middlewares = app => {
-  app.use(compose([webpackMd]))
+  webpackM(app)
 }
 
 module.exports = middlewares

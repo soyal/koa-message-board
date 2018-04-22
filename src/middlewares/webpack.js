@@ -1,21 +1,15 @@
 const webpack = require('webpack')
-const webpackDevMiddleware = require('webpack-dev-middleware')
+const koaWebpack = require('koa-webpack')
 const webpackOptions = require('../../webpack.config')
 const compiler = webpack(webpackOptions)
 
-const middleware = webpackDevMiddleware(compiler, {
-  publicPath: webpackOptions.output.publicPath
-})
-
-module.exports = async function(ctx, next) {
-  middleware(
-    ctx.req,
-    {
-      send: content => (ctx.body = content),
-      setHeader: (...args) => {
-        ctx.set(...args)
+module.exports = function(app) {
+  app.use(
+    koaWebpack({
+      compiler,
+      dev: {
+        logLevel: 'silent'
       }
-    },
-    next
+    })
   )
 }
